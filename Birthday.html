@@ -1,320 +1,153 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <style type="text/css">
-    @import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-body {
-  background: #E5E5E5;
-  background-image: url("bday.jpg");
-  background-repeat: no-repeat;
-  background-color: #3c0a47;
-  background-size: 50% 100%;
-  padding: 50px;
-}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
+      @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+      * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+      }
+      body {
+        background: #e5e5e5;
+        background-image: url("bday.jpg");
+        background-repeat: repeat;
+        background-color: #3c0a47;
+        padding: 3%;
+      }
 
-#card-front {
-  color: #FFDFDF;
-}
+      #card-front {
+        color: #ffdfdf;
+      }
+      .wrap {
+        padding: 1.5em 2.5em;
+      }
+      #card-front {
+        width: 50%;
+        -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 50%;
+      }
 
-#card, #card-front, #card-inside {
-  height: 580px;
-}
+      #card h1 {
+        text-align: center;
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: 70px;
+        color: #fff;
+      }
+      #rh {
+        margin-left: 20%;
+        width: 40%;
+        margin-top: -8%;
+      }
 
-.wrap {
-    padding: 1.5em 2.5em;
-    height: 100%;
-}
-#card-front, #card-inside {
-  width: 50%;
-  -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
-  -moz-box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
-  box-shadow: 2px 2px 30px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .5);
-  position: absolute;
-  left: 50%;
-}
+      #card-front {
+        background-color: #ff5555;
+        background-image: linear-gradient(top, #ff5555 0%, #ff7777 100%);
+        background-image: -moz-linear-gradient(top, #ff5555 0%, #ff7777 100%);
+        background-image: -webkit-linear-gradient(
+          top,
+          #ff5555 0%,
+          #ff7777 100%
+        );
+        transform-origin: left;
+        -moz-transform-origin: left;
+        -webkit-transform-origin: left;
+        transition: transform 1s linear;
+        -moz-transition: -moz-transform 1s linear;
+        -webkit-transition: -webkit-transform 1s linear;
+        position: relative;
+      }
 
+      #card-front button {
+        position: absolute;
+        bottom: 1em;
+        right: -12px;
+        background: #f44;
+        color: #fff;
+        font-family: "Nobile", sans-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.5em;
+        padding: 0.5em;
+        border: none;
+        cursor: pointer;
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25),
+          0 0 1px rgba(0, 0, 0, 0.4);
+      }
 
-#card-inside .wrap {
-    background: #FFEFEF;
-    -webkit-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
-    -moz-box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
-    box-shadow: inset 2px 0 1px rgba(0, 0, 0, .05);
-}
-#card {
-    max-width: 960px;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    perspective: 5000px;
-    -moz-perspective: 5000px;
-    -webkit-perspective: 5000px;
-    position: relative;
-}
-
-#card h1 {
-    text-align: center;
-    font-family: 'Nobile', sans-serif;
-    font-style: italic;
-    font-size: 70px;
-    text-shadow: 
-        4px 4px 0px rgba(0, 0, 0, .15),
-        1px 1px 0 rgba(255, 200, 200, 255),
-        2px 2px 0 rgba(255, 150, 150, 255),
-        3px 3px 0 rgba(255, 125, 125, 255);
-    color: #FFF;
-}
-#rh{
-  margin-left:20%;
-  width:40%;
-  margin-top: -8%;
-}
-#card-inside {
-    font-size: 1.1em;
-    line-height: 1.4;
-    font-family: sans-serif;
-    color: #331717;
-}
-
-p {
-    margin-top: 1em;
-}
-
-p:first-child {
-    margin-top: 0;
-}
-
-p.signed {
-    text-align: center;
-    font-family: 'Dancing Script', sans-serif;
-    font-size: 1.5em;
-}
-
-#card-front {
-    background-color: #FF5555;
-    background-image: linear-gradient(top, #FF5555 0%, #FF7777 100%);
-    background-image: -moz-linear-gradient(top, #FF5555 0%, #FF7777 100%);
-    background-image: -webkit-linear-gradient(top, #FF5555 0%, #FF7777 100%);
-            transform-origin: left;
-       -moz-transform-origin: left;
-    -webkit-transform-origin: left;
-            transition:         transform 1s linear;
-       -moz-transition:    -moz-transform 1s linear;
-    -webkit-transition: -webkit-transform 1s linear;
-    position: relative;
-}
-
-#card-front .wrap {
-            transition: background 1s linear;
-       -moz-transition: background 1s linear;
-    -webkit-transition: background 1s linear;
-}
-
-#card-front button {
-  position: absolute;
-  bottom: 1em;
-  right: -12px;
-  background: #F44;
-  color: #FFF;
-  font-family: 'Nobile', sans-serif;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 1.5em;
-  padding: .5em;
-  border: none;
-  cursor: pointer;
-          box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
-     -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
-  -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .4);
-}
-
-#card-front button:hover,
-#card-front button:focus {
-  background: #F22;
-}
-
-#close {
-  display: none;
-}
-
-#card.open-fully #close,
-#card-open-half #close {
-  display: inline;
-}
-
-#card.open-fully #open {
-  display: none;
-}
-
-
-#card.open-half #card-front,
-#card.close-half #card-front {
-            transform: rotateY(-90deg);
-       -moz-transform: rotateY(-90deg);
-    -webkit-transform: rotateY(-90deg);
-}
-#card.open-half #card-front .wrap {
-    background-color: rgba(0, 0, 0, .5);
-}
-
-#card.open-fully #card-front,
-#card.close-half #card-front {
-  background: #FFEFEF;
-}
-
-#card.open-fully #card-front {
-    transform: rotateY(-180deg);
-    -moz-transform: rotateY(-180deg);
-    -webkit-transform: rotateY(-180deg);
-}
-
-#card.open-fully #card-front .wrap {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-#card.open-fully #card-front .wrap *,
-#card.close-half #card-front .wrap * {
-   display: none;
-}
-
-footer {
-  max-width: 500px;
-  margin: 40px auto;
-  font-family:  sans-serif;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #888;
-  text-align: center;
-}
-@media(max-width:1000px){
-  body{
-    background-size: 50% 65%;
-  }
-  #card, #card-front, #card-inside {
-    height: 600px;
-    font-size:15px
-  }
-  #card h1{
-    font-size: 45px;
-  }
-}
-@media(max-width:768px){
-  body{
-    background-size: 70%;
-  }
-  #card, #card-front, #card-inside {
-    height: 400px;
-    font-size:13px
-  }
-  #card h1{
-    font-size: 50px;
-  }
-}
-/* @media(max-width:576px){
-  body{
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-color: #4d0c4c;
-  }
-  #card, #card-front, #card-inside {
-    height: 400px;
-    font-size:11px
-  }
-  #card h1{
-    font-size: 40px;
-  }
-} */
-
-@media (min-width: 414px) and (max-width: 736px)  { 
-    body{
-      background-size: 70%;
-      background-repeat: no-repeat;
-    }
-    #card{
-      margin-top:60%   
-    }
-    #card h1{
-      font-size: 38px;
-    }
-    #card, #card-front, #card-inside {
-      height: 490px;
-      font-size:10.7px
-    }
-    #rh{
-      width:120px;
-    }
-}
-
-
-  </style>
+      #close {
+        display: none;
+      }
+      @media (min-width: 414px) and (max-width: 736px) {
+        body {
+          background-repeat: repeat;
+          background-size: 50%;
+        }
+        #card-front {
+          margin-top: 23%;
+        }
+        #card h1 {
+          font-size: 38px;
+        }
+        #card-front {
+          width: 50%;
+          position: absolute;
+          left: 10%;
+        }
+        #rh {
+          width: 120px;
+        }
+      }
+    </style>
   </head>
-<body>
-  <div id="card">
-    <div id="card-inside">
-      <div class="wrap">
-        <p>“Wish you many many happy returns of the day friend,all your dreams come true.</p>
-        <p>I didn't expect that i find a person like you in this life &#128519. Sach m yr apto acchi aurat ha, har meri baat sunta ho, muje support kartha ho, whenever i am low u take the step and made me smile and boltha ha ki "i am here why fikar &#128522". 
-        ap mujse baat nhi kiya to patha nhi usdin m very low ho jata hu duffer 🥴 You are a true, pure, matured & immatured friend 😏, kabi kabi bhut gusa delata ho 👿 fr ek msg sa sab gayab kartha ho 😇</p>
-        <p>Hello hello, bs bs necha ajao yr, aur upr math jao badal sa tuk rayega &#128541, let me go with you as a friend in this life, otherwise i will die and become ghost👻 aur apko daratha hu 🤪</p>
-        <p>Enjoy your Day. Stay Blessed nd Happy . Keep Smiling :)</p>
-        <center><h4>Siva Ram</h4></center>
-        
+  <body>
+    <div id="card">
+      <div id="card-front">
+        <div class="wrap">
+          <h1>Happy &#8383;irthday!</h1>
+          <img
+            id="rh"
+            src="rehmat.jpg"
+            alt="pic"
+            style="border: 1px solid white"
+            width="30%"
+          />
+        </div>
+        <button id="open">&gt;</button>
+        <button id="close">&lt;</button>
       </div>
     </div>
-    <div id="card-front">
-      <div class="wrap">
-        <h1>	&#8461;@ppy &#8383;irthday!</h1>
-        <img id="rh" src="rehmat.jpg" alt="pic" style="border:1px solid white" width="30%" />
-      </div>
-      <button id="open">&gt;</button>
-      <button id="close">&lt;</button>
-    </div>
-  </div>
-  <script>
-    (function() {
-  function $(id) {
-    return document.getElementById(id);
-  }
+    <script>
+      (function () {
+        function $(id) {
+          return document.getElementById(id);
+        }
 
-  var card = $('card'),
-      openB = $('open'),
-      closeB = $('close'),
-      timer = null;
-  console.log('wat', card);
-  openB.addEventListener('click', function () {
-    const audio = new Audio("bday.mp3");
-    audio.play();
-    card.setAttribute('class', 'open-half');
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(function () {
-      card.setAttribute('class', 'open-fully');
-      timer = null;
-    }, 1000);
-    setTimeout(()=>{
-      audio.pause()
-    },20000)
-  });
-
-  closeB.addEventListener('click', function () {
-    card.setAttribute('class', 'close-half');
-    if (timer) clearTimerout(timer);
-    timer = setTimeout(function () {
-      card.setAttribute('class', '');
-      timer = null;
-    }, 1000);
-  });
-
-}());
-
-  </script>
-
-
-</body>
+        var card = $("card"),
+          openB = $("open"),
+          closeB = $("close"),
+          timer = null;
+        console.log("wat", card);
+        openB.addEventListener("click", function () {
+          const audio = new Audio("bday.mp3");
+          audio.play();
+          setTimeout(() => {
+            audio.pause();
+            window.location.href = "wishes.html";
+          }, 17500);
+        });
+      })();
+    </script>
+  </body>
 </html>
