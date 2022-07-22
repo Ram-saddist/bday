@@ -13,6 +13,9 @@
 body {
   background: #E5E5E5;
   background-image: url("bday.jpg");
+  background-repeat: no-repeat;
+  background-color: #3c0a47;
+  background-size: 50% 100%;
   padding: 50px;
 }
 
@@ -67,6 +70,11 @@ body {
         2px 2px 0 rgba(255, 150, 150, 255),
         3px 3px 0 rgba(255, 125, 125, 255);
     color: #FFF;
+}
+#rh{
+  margin-left:20%;
+  width:40%;
+  margin-top: -8%;
 }
 #card-inside {
     font-size: 1.1em;
@@ -185,27 +193,85 @@ footer {
   color: #888;
   text-align: center;
 }
+@media(max-width:1000px){
+  body{
+    background-size: 50% 65%;
+  }
+  #card, #card-front, #card-inside {
+    height: 600px;
+    font-size:15px
+  }
+  #card h1{
+    font-size: 45px;
+  }
+}
+@media(max-width:768px){
+  body{
+    background-size: 70%;
+  }
+  #card, #card-front, #card-inside {
+    height: 400px;
+    font-size:13px
+  }
+  #card h1{
+    font-size: 50px;
+  }
+}
+/* @media(max-width:576px){
+  body{
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: #4d0c4c;
+  }
+  #card, #card-front, #card-inside {
+    height: 400px;
+    font-size:11px
+  }
+  #card h1{
+    font-size: 40px;
+  }
+} */
+
+@media (min-width: 414px) and (max-width: 736px)  { 
+    body{
+      background-size: 70%;
+      background-repeat: no-repeat;
+    }
+    #card{
+      margin-top:60%   
+    }
+    #card h1{
+      font-size: 38px;
+    }
+    #card, #card-front, #card-inside {
+      height: 490px;
+      font-size:10.7px
+    }
+    #rh{
+      width:120px;
+    }
+}
+
+
   </style>
   </head>
 <body>
   <div id="card">
     <div id="card-inside">
       <div class="wrap">
-        <p>Hey pgluuuuuu,</p>
-        <p>“Wish you many many happy returns of the day, whatever you ask you will receive, whatever you seek you are going to find.</p>
-        <p>I cant expexct that i am going to find a person like you in this life &#128519. Sach m yr apto acchi aurat ha, har meri baat sunta ho, muje support kiya, when i am low u take the step and make me smile and boltha ha ki "i am here why fikar &#128522".</p>
-        <p>Hello hello, bs bs necha ajao aur upr math jao badal sa tuk rayega &#128541</p>
-
-        <p>Enjoy your Day . Stay Blessed nd Happy . Keep Smiling :)</p>
-        
-        <center><h4>from</h4></center>
-        <p class="signed">Siva Ram</p>
+        <p>“Wish you many many happy returns of the day friend,all your dreams come true.</p>
+        <p>I didn't expect that i find a person like you in this life &#128519. Sach m yr apto acchi aurat ha, har meri baat sunta ho, muje support kartha ho, whenever i am low u take the step and made me smile and boltha ha ki "i am here why fikar &#128522". 
+        ap mujse baat nhi kiya to patha nhi usdin m very low ho jata hu duffer 🥴 You are a true, pure, matured & immatured friend 😏, kabi kabi bhut gusa delata ho 👿 fr ek msg sa sab gayab kartha ho 😇</p>
+        <p>Hello hello, bs bs necha ajao yr, aur upr math jao badal sa tuk rayega &#128541, let me go with you as a friend in this life, otherwise i will die and become ghost👻 aur apko daratha hu 🤪</p>
+        <p>Enjoy your Day. Stay Blessed nd Happy . Keep Smiling :)</p>
+        <center><h4>Siva Ram</h4></center>
         
       </div>
     </div>
     <div id="card-front">
       <div class="wrap">
-        <h1>Happy Birthday!</h1>
+        <h1>	&#8461;@ppy &#8383;irthday!</h1>
+        <img id="rh" src="rehmat.jpg" alt="pic" style="border:1px solid white" width="30%" />
       </div>
       <button id="open">&gt;</button>
       <button id="close">&lt;</button>
@@ -223,12 +289,17 @@ footer {
       timer = null;
   console.log('wat', card);
   openB.addEventListener('click', function () {
+    const audio = new Audio("bday.mp3");
+    audio.play();
     card.setAttribute('class', 'open-half');
     if (timer) clearTimeout(timer);
     timer = setTimeout(function () {
       card.setAttribute('class', 'open-fully');
       timer = null;
     }, 1000);
+    setTimeout(()=>{
+      audio.pause()
+    },20000)
   });
 
   closeB.addEventListener('click', function () {
@@ -244,12 +315,6 @@ footer {
 
   </script>
 
-<div style="visibility: hidden;">
-<embed src="bday.mp3" autostart="true" loop="true">
-</div>
-<div style="visibility: hidden;">
-<embed src="bday.mp3" autostart="true" loop="true">
-</div>
 
-  </body>
-  </html>
+</body>
+</html>
